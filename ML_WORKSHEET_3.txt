@@ -1,0 +1,115 @@
+WORKSHEET
+
+MACHINE LEARNING – WORKSHEET 3
+
+Q1 to Q15 are subjective answer type questions, Answer them briefly.
+
+1. Give short description each of Linear, RBF, Polynomial kernels used in SVM.
+Ans: Support vector machines so called as SVM is a supervised learning algorithm which can be used for classification and regression problems as support vector classification (SVC) and support vector regression (SVR). It is used for smaller dataset as it takes too long to process.
+The kernel is a way of computing the dot product of two vectors x and y in some (very high dimensional) feature space, which is why kernel functions are sometimes called “generalized dot product.
+TYPES Of KERNELS:
+1.linear kernel
+2.polynomial kernel
+3.Radial basis function kernel (RBF)/ Gaussian Kernel
+Linear Kernel:Linear Kernel is used when the data is Linearly separable, that is, it can be separated using a single Line. It is one of the most common kernels to be used.
+Polynomial Kernel: In the polynomial kernel, we simply calculate the dot product by increasing the power of the kernel.
+RBF: Gaussian RBF(Radial Basis Function) is another popular Kernel method used in SVM models for more. RBF kernel is a function whose value depends on the distance from the origin or from some point.
+
+2. R-squared or Residual Sum of Squares (RSS) which one of these two is a better measure of goodness of fit of
+model in regression and why??
+
+Ans:Residual Sum of Squares (RSS):
+The residual sum of squares (RSS) is the sum of the squared distances between actual versus predicted values:
+The residual sum of squares measures the amount of error remaining between the regression function and the data set.
+ A smaller residual sum of squares figure represents a regression function. Residual sum of squares–also known as the sum of squared residuals–essentially determines how well a regression model explains or represents the data in the model.
+Ideally, the sum of squared residuals should be a smaller or lower value in any regression model.
+R-squared:
+R-squared is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination, or the coefficient of multiple determination for multiple regression.
+R-squared is always between 0 and 100%:
+
+	0% indicates that the model explains none of the variability of the response data around its mean.
+	100% indicates that the model explains all the variability of the response data around its mean.
+In general, the higher the R-squared, the better the model fits our data.
+
+
+3. What are TSS (Total Sum of Squares), ESS (Explained Sum of Squares) and RSS (Residual Sum of Squares)
+in regression. Also mention the equation relating these three metrics with each other.
+Ans:
+TSS(Total Sum of Squares)-In statistical data analysis the total sum of squares (TSS or SST) is a quantity that appears as part of a standard way of presenting results of such analyses. For a set of observations , it is defined as the sum over all squared differences between the observations and their overall mean.
+ESS(Explained Sum of Squares)-The explained sum of squares (ESS) is the sum of the squares of the deviations of the predicted values from the mean value of a response variable, in a standard regression model.
+RSS (Residual Sum of Squares)-The residual sum of squares measures the amount of error remaining between the regression function and the data set
+total sum of squares ( TSS ) = explained sum of squares (ESS)+ residual sum of squares (RSS).
+
+4. What is Gini –impurity index?
+Ans:
+The Gini impurity measure is one of the methods used in decision tree algorithms to decide the optimal split from a root node, and subsequent splits. Gini Impurity tells us what is the probability of misclassifying an observation.the lower the Gini the better the split.
+ In other words the lower the likelihood of misclassification.
+
+5. Are unregularized decision-trees prone to overfitting? If yes, why?
+Ans:
+ Yes, an unregularised decision-trees prone to overfitting.
+Decision trees are a widely used family of methods for learning predictive models from both batch and streaming data. Despite depicting positive results in a multitude of applications, incremental decision trees continuously grow in terms of nodes as new data becomes available, i.e., they eventually split on all features available, and also multiple times using the same feature, thus leading to unnecessary complexity and overfitting. With this behavior, incremental trees lose the ability to generalize well, be human-understandable, and be computationally efficient. To tackle these issues, we proposed  a regularization scheme for Hoeffding decision trees that (i) uses a penalty factor to control the gain obtained by creating a new split node using a feature that has not been used thus far and 
+(ii) uses information from previous splits in the current branch to determine whether the gain observed indeed justifies a new split.
+We extend this analysis and apply the proposed regularization scheme to other types of incremental decision trees and report the results in both synthetic and real-world scenarios. The main interest is to verify whether and how the proposed regularization scheme affects the different types of incremental trees. 
+
+6. What is an ensemble technique in machine learning?
+Ans:
+Ensemble methods is a machine learning technique that combines several base models in order to produce one optimal predictive model. Ensemble methods usually produces more accurate solutions than a single model would.
+
+7. What is the difference between Bagging and Boosting techniques?
+Ans:
+Bagging is a way to decrease the variance in the prediction by generating additional data for training from dataset using combinations with repetitions to produce multi-sets of the original data.
+Boosting is an iterative technique which adjusts the weight of an observation based on the last classification.
+
+
+8. what is out-of-bag error in random forests?
+Ans:
+The out-of-bag (OOB) error is the average error for each calculated using predictions from the trees that do not contain in their respective bootstrap sample. This allows the RandomForestClassifier to be fit and validated whilst being trained.
+
+
+9. What is K-fold cross-validation?
+Ans:
+Usually, we split the data set into training and testing sets and use the training set to train the model and testing set to test the model.We then evaluate the model performance based on an error metric to determine the accuracy of the model.This method however, is not very reliable as the accuracy obtained for one test set can be very different to the accuracy obtained for a different test set. K-fold Cross Validation(CV) provides a solution to this problem by dividing the data into folds and ensuring that each fold is used as a testing set at some point.
+K-Fold CV is where a given data set is split into a K number of sections/folds where each fold is used as a testing set at some point. Lets take the scenario of 5-Fold cross validation(K=5). Here, the data set is split into 5 folds. In the first iteration, the first fold is used to test the model and the rest are used to train the model. In the second iteration, 2nd fold is used as the testing set while the rest serve as the training set. This process is repeated until each fold of the 5 folds have been used as the testing set.
+
+10. What is hyper parameter tuning in machine learning and why it is done?
+Ans:
+Hyper Parameter Tuning-
+Parameters which define the model architecture are referred to as hyperparameters and thus this process of searching for the ideal model architecture is referred to as hyperparameter tuning.
+Hyperparameters are important because they directly control the behaviour of the training algorithm and have a significant impact on the performance of the model is being trained. “A good choice of hyperparameters can really make an algorithm shine”.Easy to manage a large set of experiments for hyperparameter tuning.
+
+11. What issues can occur if we have a large learning rate in Gradient Descent?
+Ans:
+Deep learning neural networks are trained using the stochastic gradient descent algorithm.Specifically, the learning rate is a configurable hyperparameter used in the training of neural networks that has a small positive value, often in the range between 0.0 and 1.0.
+When the learning rate is too large, gradient descent can inadvertently increase rather than decrease the training error. When the learning rate is too small, training is not only slower, but may become permanently stuck with a high training error.
+
+
+12. What is bias-variance trade off in machine learning?
+Ans:
+Bias-Bias is the difference between the average prediction of our model and the correct value which we are trying to predict. Model with high bias pays very little attention to the training data and oversimplifies the model. It always leads to high error on training and test data.
+Variance-Variance is the variability of model prediction for a given data point or a value which tells us spread of our data. Model with high variance pays a lot of attention to training data and does not generalize on the data which it hasn’t seen before. As a result, such models perform very well on training data but has high error rates on test data.
+Trade-off:-Trade-off is tension between the error introduced by the bias and the variance.
+Bias-Variance Trad off:-If our model is too simple and has very few parameters then it may have high bias and low variance. On the other hand if our model has large number of parameters then it’s going to have high variance and low bias. So we need to find the right/good balance without overfitting and underfitting the data.
+This tradeoff in complexity is why there is a tradeoff between bias and variance. An algorithm can’t be more complex and less complex at the same time.
+
+13. What is the need of regularization in machine learning?
+Ans:
+Regularisation is a technique used to reduce the errors by fitting the function appropriately on the given training set and avoid overfitting.The commonly used regularisation techniques are : L1 regularisation.
+The function has trained itself to get the correct target values for all the noise induced data points and thus has failed to predict the correct pattern. This function may give zero error for training set but will give huge errors in predicting the correct target values for test dataset.
+To avoid this condition regularization is used. Regularization is a technique used for tuning the function by adding an additional penalty term in the error function.
+
+14. Differentiate between Adaboost and Gradient Boosting
+Ans:
+AdaBoost stands for Adaptive Boosting. So, basically, we will see the differences between Adaptive Boosting and Gradient Boosting. The basic idea of boosting (an ensemble learning technique) is to combine several weak learners into a stronger one. The general idea of boosting algorithms is to try predictors sequentially, where each subsequent model attempts to fix the errors of its predecessor.
+Adaboost is more about ‘voting weights’ and Gradient boosting is more about ‘adding gradient optimization’
+Adaboost increases the accuracy by giving more weightage to the target which is misclassified by the model. At each iteration, Adaptive boosting algorithm changes the sample distribution by modifying the weights attached to each of the instances. It increases the weights of the wrongly predicted instances and decreases the ones of the correctly predicted instances.
+Gradient boosting calculates the gradient (derivative) of the Loss Function with respect to the prediction (instead of the features). Gradient boosting increases the accuracy by minimizing the Loss Function (error which is difference of actual and predicted value) and having this loss as target for the next iteration.
+
+15. Can we use Logistic Regression for classification of Non-Linear Data? If not, why?
+Ans:
+Logistic regression is considered a generalized linear model because the outcome always depends on the sum of the inputs and parameters. Or in other words, the output cannot depend on the product (or quotient, etc.) of its parameters.
+
+
+
+
+
