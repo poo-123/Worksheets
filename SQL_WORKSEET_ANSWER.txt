@@ -1,0 +1,113 @@
+WORKSHEET-3
+SQL
+Refer the following ERD and answer all the questions in this worksheet. You have to write the queries using mysql
+for the required Operation.
+ Customers: stores customer’s data.
+ Products: stores a list of scale model cars.
+ ProductLines: stores a list of product line categories.
+ Orders: stores sales orders placed by customers.
+ OrderDetails: stores sales order line items for each sales order.
+ Payments: stores payments made by customers based on their accounts.
+ Employees: stores all employee information as well as the organization structure such as who reports to whom.
+ Offices: stores sales office data.
+
+1. Write SQL query to create table Customers.
+SQL query to create table Customers;
+
+mysql> create table Customers(
+    -> customerNumber int,
+    -> cutomerName varchar(10),
+    -> customersLastName varchar(10),
+    -> customaersFirstName varchar(10),
+    -> phone int(11) unique,
+    -> addressLine1 varchar(50),
+    -> adressLine2 varchar(50),
+    -> city varchar(10),
+    -> state varchar(10),
+    -> postalCode int,
+    -> country varchar(10),
+    -> salesRepEmployeeNumber varchar(20),
+    -> creditLimit int);
+Query OK, 0 rows affected, 1 warning (0.14 sec)
+
+2. Write SQL query to create table Orders.
+SQL query to create table Orders;
+
+mysql> create table orders(
+    -> orderNumber int,
+    -> orderDate datetime,
+    -> requiredDate datetime,
+    -> shippedDate datetime,
+    -> status char(10),
+    -> comments varchar(100),
+    -> customersNumber int);
+Query OK, 0 rows affected (0.11 sec)
+
+3. Write SQL query to show all the columns data from the Orders Table.
+SQL query to show all the columns data from the Order Table;
+
+mysql> select * from Orders;
+
+4. Write SQL query to show all the comments from the Orders Table.
+SQL query to show all comments from the Order Table;
+
+mysql> select distinct comments from Order;
+
+5. Write a SQL query to show orderDate and Total number of orders placed on that date, from Orders table.
+SQL query to show orderDate and Total number of orders placed on that date, from Orders table;
+
+mysql>select distinct orderDate from Order;
+
+mysql>select sum(orderDate) from Order;
+
+6. Write a SQL query to show employeNumber, lastName, firstName of all the employees from employees table.
+SQl query to show employeeNumber,lastName, firstName of all employees from employees table;
+mysql>select employeeNumber,lastName, firstName from employees table;
+
+
+7. Write a SQL query to show all orderNumber, customerName of the person who placed the respective order.
+SQL query to show all orderNumber,CustomerName
+
+mysql>select 
+
+8. Write a SQL query to show name of all the customers in one column and salerepemployee name in another
+column.
+SQL query to show name of all customers in one column and salerepemployee name in another column
+
+mysql>select customerName,salesRepEmployeeNumer from customers;
+
+9. Write a SQL query to show Date in one column and total payment amount of the payments made on that date
+from the payments table.
+SQL query to show Date in one column and total payment amount of the payments made on that date
+from the payments table:
+
+mysql>select paymentDate
+10. Write a SQL query to show all the products productName, MSRP, productDescription from the products table.
+
+mysql>select productName,MSRP,productDescription from products;
+
+11. Write a SQL query to print the productName, productDescription of the most ordered product.
+
+mysql>
+12. Write a SQL query to print the city name where maximum number of orders were placed.
+
+mysql>select * from customers order by city desc;
+ mysql>select * from cutomers order by city desc limit 1; 
+
+13. Write a SQL query to get the name of the state having maximum number of customers.
+
+mysql>select * from customers order by state desc;
+ mysql>select * from cutomers order by state desc limit 1; 
+
+14. Write a SQL query to print the employee number in one column and Full name of the employee in the second
+column for all the employees.
+
+mysql>select * employeeNumber,sum(LastName+FirstName) from employee;
+
+15. Write a SQL query to print the orderNumber, customer Name and total amount paid by the customer for that
+order (quantityOrdered × priceEach).
+
+
+
+
+ 
