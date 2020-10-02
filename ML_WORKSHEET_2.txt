@@ -1,0 +1,162 @@
+WORKSHEET
+MACHINE LEARNING – WORKSHEET 2
+
+In Q1 to Q5, only one option is correct, Choose the correct option:
+
+
+1. In which of the following you can say that the model is overfitting?
+
+A) High R-squared value for train-set and High R-squared value for test-set.
+B) Low R-squared value for train-set and High R-squared value for test-set.
+C) High R-squared value for train-set and Low R-squared value for test-set.
+D) None of the above
+
+ANS: B) Low R-squared value for train-set and High R-squared value for test-set.
+
+2. Which among the following is a disadvantage of decision trees?
+
+ A) Decision trees are prone to outliers.
+B) Decision trees are highly prone to overfitting.
+C) Decision trees are not easy to interpret
+D) None of the above.
+
+ANS: B) Decision trees are highly prone to overfitting.
+
+3. Which of the following is an ensemble technique?
+
+ A) SVM B) Logistic Regression
+C) Random Forest D) Decision tree
+
+ANS: C) Random Forest
+
+4. Suppose you are building a classification model for detection of a fatal disease where detection of the disease
+is most important. In this case which of the following metrics you would focus on?
+
+A) Accuracy B) Sensitivity
+C) Precision D) None of the above.
+
+ANS: A) Accuracy
+
+5. The value of AUC (Area under Curve) value for ROC curve of model A is 0.70 and of model B is 0.85.
+Which of these two models is doing better job in classification?
+
+A) Model A B) Model B
+C) both are performing equal D) Data Insufficient
+
+ANS: B) Model B
+
+In Q6 to Q9, more than one options are correct, Choose all the correct options:
+
+6. Which of the following are the regularization technique in Linear Regression?
+
+A) Ridge B) R-squared
+ C) MSE D) Lasso
+
+ANS: A) Ridge, D) Lasso
+
+7. Which of the following is not an example of boosting technique?
+
+ A) Adaboost B) Decision Tree
+C) Random Forest D) Xgboost.
+
+ANS: B) Decision Tree, C) Random Forest 
+
+8. Which of the techniques are used for regularization of Decision Trees?
+
+A) Pruning B) L2 regularization
+C) Restricting the max depth of the tree D) All of the above
+
+ANS: A) Pruning
+
+9. Which of the following statements is true regarding the Adaboost technique?
+
+A) We initialize the probabilities of the distribution as 1/n, where n is the number of data-points
+B) A tree in the ensemble focuses more on the data points on which the previous tree was not performing well
+C) It is example of bagging technique
+D) None of the above
+
+ANS: A) We initialize the probabilities of the distribution as 1/n, where n is the number of data-points
+        B) A tree in the ensemble focuses more on the data points on which the previous tree was not performing well
+
+Q10 to Q15 are subjective answer type questions, Answer them briefly.
+
+
+10. Explain how does the adjusted R-squared penalize the presence of unnecessary predictors in the model?
+
+ANS:  R-squared shows how well terms (data points) fit a curve or line. Adjusted R2 also indicates how well terms fit a curve or line, but adjusts for the number of terms in a model. 
+If we add more and more useless variables to a model, adjusted r-squared will decrease. If we add more useful variables, adjusted r-squared will increase.
+Adjusted R2 will always be less than or equal to R-squared.
+
+Adjusted R2=1-[(1-R2)(n-1)/n-k-1]
+
+where:
+
+*N is the number of points in data sample.
+*K is the number of independent regressors, i.e. the number of variables in the model, excluding the constant
+
+the adjusted R2 will penalize  for adding independent variables (K in the equation) that do not fit the model. 
+In regression analysis, it can be tempting to add more variables to the data as we think of them. Some of those variables will be significant, but we can’t be sure that significance is just by chance. 
+The adjusted R2 will compensate for this by that penalizing us for those extra variables.
+
+While values are usually positive, they can be negative as well. This could happen if  R2 is zero; After the adjustment, the value can dip below zero. This usually indicates that the model is a poor fit for given data.
+Other problems with  model can also cause sub-zero values, such as not putting a constant term in the model.
+
+
+11. Differentiate between Ridge and Lasso Regression.
+
+ANS:
+Ridge and Lasso regression uses two different penalty functions. 
+Ridge uses l2 where as lasso go with l1. In ridge regression, the penalty is the sum of the squares of the coefficients and for the Lasso, it’s the sum of the absolute values of the coefficients
+ It’s a shrinkage towards zero using an absolute value (l1 penalty) rather than a sum of squares(l2 penalty).
+
+As we know that ridge regression can’t zero coefficients. Here,we either select all the coefficients or none of them whereas LASSO does both parameter shrinkage and variable selection automatically because it zero out the co-efficients of collinear variables.
+Here it helps to select the variable(s) out of given n variables while performing lasso regression.
+
+12. What is VIF? What is the suitable value of a VIF for a feature to be included in a regression modelling?
+
+ANS:
+VIF-A variance inflation factor(VIF) detects multicollinearity in regression analysis. Multicollinearity is when there’s correlation between predictors (i.e. independent variables) in a model; it’s presence can adversely affect  regression results. 
+The VIF estimates how much the variance of a regression coefficient is inflated due to multicollinearity in the model.
+
+R^2 value is determined to find out how well an independent variable is described by the other independent variables. A high value of R^2 means that the variable is highly correlated with the other variables. This is captured by the VIF which is denoted below:
+
+VIF=1/1-R^2
+
+So, the closer the R^2 value to 1, the higher the value of VIF and the higher the multicollinearity with the particular independent variable.
+
+VIF starts at 1 and has no upper limit
+VIF = 1, no correlation between the independent variable and the other variables
+VIF exceeding 5 or 10 indicates high multicollinearity between this independent variable and the others
+
+13. Why do we need to scale the data before feeding it to the train the model?
+
+ANS: Feature Scaling or Standardization: It is a step of Data Pre Processing which is applied to independent variables or features of data. It basically helps to normalise the data within a particular range. Sometimes, it also helps in speeding up the calculations in an algorithm.
+Machine learning algorithm just sees number — if there is a vast difference in the range say few ranging in thousands and few ranging in the tens, and it makes the underlying assumption that higher ranging numbers have superiority of some sort.
+So these more significant number starts playing a more decisive role while training the model.Thus feature scaling is needed to bring every feature in the same footing without any upfront importance.
+
+
+14. What are the different metrics which are used to check the goodness of fit in linear regression?
+
+ANS:
+A goodness-of-fit test, in general, refers to measuring how well do the observed data correspond to the fitted (assumed) model.
+Like in a linear regression, in essence, the goodness-of-fit test compares the observed values to the expected (fitted or predicted) values.
+R squared, the proportion of variation in the outcome Y, explained by the covariates X, is commonly described as a measure of goodness of fit. 
+This of course seems very reasonable, since R squared measures how close the observed Y values are to the predicted (fitted) values from the model.
+
+WORKSHEET
+
+15. From the following confusion matrix calculate sensitivity, specificity, precision, recall and accuracy.
+Actual/Predicted True False
+True 1000 50
+False 250 1200
+
+SOLUTION;
+TP=1000
+FP=250
+FN=50
+TN=1200
+
+1. sensitivity or Recall= TP/TP+FN=1000/1000+50=1000/1050=0.9523809524
+2. specificity = TN/FP+TN=1200/250+1200=1200/1450=0.8275862069
+3. precision = TP/TP+FP=1000/1000+250=1000/1250=0.8
+4. accuracy = TP+TN/TP+FN+FP+TN=1000+1200/1000+50+250+1200=2200/2500=0.88
